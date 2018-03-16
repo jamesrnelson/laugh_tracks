@@ -1,9 +1,14 @@
+<!-- # <% sum_ages = all_comedians.map { |comedian| comedian[:age] %>
+# <% average_age = sum_ages.sum / all_comedians.length %>
+#
+# <h4>The average age of all comedians is <%= average_age %> </h4> -->
+
 <% all_comedians.each do |comedian| %>
 <ul>
   <li><%= comedian.name %></li>
   <li><%= comedian.age %></li>
-  <% comedian.specials.each do |special| %>
-  <li><%= special[:name] %></li>
-      <% end %>
+    <% comedian.specials.each do |special| %>
+    <li><%= special[:name] %></li>
+    <% end %>
 </ul>
 <% end %>
