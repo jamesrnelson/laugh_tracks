@@ -17,5 +17,14 @@ describe 'User Visits Comedians Index' do
       expect(page).to have_text('45')
       expect(page).to have_text('56')
     end
+
+    it 'is showing the comedians specials' do
+      Comedian.create(name: 'Jerry Seinfeld', age: 58)
+      Special.create(name: 'Helllerrrr', comedian_id: 1)
+
+      visit '/comedians'
+
+      expect(page).to have_text('Helllerrrr')
+    end
   end
 end
